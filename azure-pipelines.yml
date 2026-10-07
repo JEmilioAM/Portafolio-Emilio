@@ -1,5 +1,5 @@
 trigger:
-  - main # Se dispara automáticamente al hacer push a la rama main
+  - master # Se dispara automáticamente al hacer push a la rama main
 
 pool:
   vmImage: 'windows-2022'
