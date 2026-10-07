@@ -29,7 +29,7 @@ namespace proyectoMVC_JEAM.Controllers
                 respuesta.Add(new Persona
                 {
                     Id = Guid.NewGuid(),
-                    Nombre = $"Persona {i + 1}"
+                    Nombre = $"Personitas {i + 1}"
 
                 });
 
