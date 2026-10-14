@@ -4,7 +4,7 @@ on:
  workflow_dispatch: #ejecucion normal
   push:
    branches:
-    - main
+    - master
    paths:
     - 'Controllers/**'
     - '.github/workflow/hola-mundo-emilio'
