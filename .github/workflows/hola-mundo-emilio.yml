@@ -1,7 +1,7 @@
 name: Hola Mundo
 
 on:
- workflow_dispatch: #ejecucion normal
+ workflow_dispatch:
   push:
    branches:
     - master
