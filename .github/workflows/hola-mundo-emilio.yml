@@ -1,28 +1,29 @@
 name: Hola Mundo
 
 on:
- workflow_dispatch:
+  workflow_dispatch: # Permite ejecutar el flujo manualmente desde GitHub
   push:
-   branches:
-    - master
-   paths:
-    - 'Controllers/**'
-    - '.github/workflow/hola-mundo-emilio'
+    branches:
+      - master
+    paths:
+      - 'Controllers/**'
+      - '.github/workflows/hola-mundo-emilio.yml' # Corregido a plural y con extensión
   pull_request:
-   branches:
-    - main
+    branches:
+      - main
 
 jobs:
- saludar:
-  runs-on: ubuntu-latest
-  steps:
-   - name: Muestra un Hola Mundo
-     run: echo "Hola mundo, 3ro ISI Emilio"
+  saludar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Muestra un Hola Mundo
+        run: echo "Hola mundo, 3ro ISI Emilio"
 
-     - name: Checkout
-     uses: actions/checkout@v7.0.1
+      - name: Checkout
+        uses: actions/checkout@v4 # Nota: La versión v7.0.1 no existe actualmente, se recomienda usar v4
 
-     - name: Listar los archivos del repositorio
-     run:
-      echo "El repositorio ${{ github.repository }} contiene los siguientes archivos"
-      tree
+      - name: Listar los archivos del repositorio
+        run: |
+          echo "El repositorio ${{ github.repository }} contiene los siguientes archivos"
+          sudo apt-get install -y tree # Instala 'tree' ya que no siempre viene por defecto en ubuntu-latest
+          tree
